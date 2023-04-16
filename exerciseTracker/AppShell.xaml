@@ -6,18 +6,25 @@
 	xmlns:views="clr-namespace:exerciseTracker.Views"
 	xmlns:local="clr-namespace:exerciseTracker">
 
-	<TabBar>
+    <Shell.ToolbarItems>
+        <ToolbarItem 
+                     IconImageSource="{Binding ThemeIcon}"
+                     Command="{Binding ToggleThemeCommand}" 
+         />
+    </Shell.ToolbarItems>
+
+    <TabBar>
 		<ShellContent
 			Title="Main"
-			Icon="iconblank.png"
+			Icon="home.svg"
 			ContentTemplate="{DataTemplate views:MainPage}" />
 		<ShellContent
 			Title="Camera"
-			Icon="iconblank.png"
+			Icon="camera.svg"
 			ContentTemplate="{DataTemplate views:CameraPage}" />
 		<ShellContent
 			Title="Diary"
-			Icon="iconblank.png"
+			Icon="list.png"
 			ContentTemplate="{DataTemplate views:DiaryPage}" />
 	</TabBar>
 </Shell>

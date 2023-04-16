@@ -1,26 +1,58 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
 			 xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:cv="clr-namespace:Camera.MAUI;assembly=Camera.MAUI"
 			 xmlns:vm="clr-namespace:exerciseTracker.ViewModels"
-			 x:Class="exerciseTracker.Views.CameraPage"
-			 x:DataType="vm:CameraViewModel">
-    
-    <ScrollView>
-        <VerticalStackLayout
-            Spacing="25"
-            Padding="30,0"
-            VerticalOptions="Fill"
-            HorizontalOptions="Fill">
+             xmlns:cv="clr-namespace:Camera.MAUI;assembly=Camera.MAUI"
+             x:DataType="vm:CameraViewModel"
+			 x:Class="exerciseTracker.Views.CameraPage">
 
-            <cv:CameraView x:Name="cameraView" WidthRequest="300" HeightRequest="300"
-                           CamerasLoaded="cameraView_CamerasLoaded"/>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
 
-            <Button Text="Smile!" Clicked="Button_Clicked" />
+        <cv:CameraView 
+            x:Name="cameraView" 
+            WidthRequest="300" 
+            HeightRequest="300" 
+            Grid.Row="0" 
+            Grid.Column="0" 
+            HorizontalOptions="Center"
+            VerticalOptions="Center"
+            CamerasLoaded="cameraView_CamerasLoaded"/>
 
-            <Image x:Name="imageView" WidthRequest="200" HeightRequest="200" />
+        <Image 
+            x:Name="myImage" 
+            WidthRequest="200" 
+            HeightRequest="200"
+            Grid.Row="1"
+            Grid.Column="0"
+            HorizontalOptions="Center"
+            VerticalOptions="Center"/>
+        
+        <Label 
+            Grid.Row="2"
+            Grid.Column="0"
+            Text="Save and View your Fitness progress"
+            FontSize="Medium"
+            HorizontalOptions="Center"
+            VerticalOptions="Center" />
 
-        </VerticalStackLayout>
-    </ScrollView>
-    
+        <Button 
+            Grid.Row="3"
+            Grid.Column="0"
+            Text="Take Picture"
+            FontSize="Medium"
+            Padding="10"
+            HorizontalOptions="Center"
+            VerticalOptions="Center"
+            Clicked="Button_Clicked" />
+    </Grid>
+
 </ContentPage>

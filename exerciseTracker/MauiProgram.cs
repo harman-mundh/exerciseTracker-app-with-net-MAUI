@@ -30,6 +30,8 @@ public static class MauiProgram
 
 		builder.Services.AddSingleton<DiaryPage>();
 
+		builder.Services.AddSingleton<IMediaPicker>(MediaPicker.Default);
+
 		return builder.Build();
 	}
 }

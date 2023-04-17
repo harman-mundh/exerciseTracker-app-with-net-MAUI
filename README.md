@@ -1,6 +1,7 @@
-- Link to Video Demo:
-- Link to the Use Case Diagram:
+- Link to Video Demo: https://livecoventryac-my.sharepoint.com/:v:/g/personal/singhh48_uni_coventry_ac_uk/EQkvAwrwyAVDmQbYm3a7GEMB5hKigGoVBK1Jj6kunWcJRQ?e=WOb5dk
+- Link to the Use Case Diagram: https://livecoventryac-my.sharepoint.com/:b:/g/personal/singhh48_uni_coventry_ac_uk/EScsCEO7hPtAtoX6aOusWiQBzwyMw0bbJJjmV83eTf8hDA?e=4zImtg
 ---
+
 # ExerciseTracker 
 ## Table of Contents
 

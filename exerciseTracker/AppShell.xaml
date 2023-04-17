@@ -6,16 +6,9 @@
 	xmlns:views="clr-namespace:exerciseTracker.Views"
 	xmlns:local="clr-namespace:exerciseTracker">
 
-    <Shell.ToolbarItems>
-        <ToolbarItem 
-                     IconImageSource="{Binding ThemeIcon}"
-                     Command="{Binding ToggleThemeCommand}" 
-         />
-    </Shell.ToolbarItems>
-
     <TabBar>
 		<ShellContent
-			Title="Main"
+			Title="BMI"
 			Icon="home.svg"
 			ContentTemplate="{DataTemplate views:MainPage}" />
 		<ShellContent

@@ -8,9 +8,9 @@
 
     <Grid>
         <Grid.RowDefinitions>
+            <RowDefinition Height="300" />
+            <RowDefinition Height="200" />
             <RowDefinition Height="*" />
-            <RowDefinition Height="Auto" />
-            <RowDefinition Height="Auto" />
             <RowDefinition Height="*" />
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
@@ -26,24 +26,30 @@
             HorizontalOptions="Center"
             VerticalOptions="Center"
             CamerasLoaded="cameraView_CamerasLoaded"/>
-
-        <Image 
-            x:Name="myImage" 
-            WidthRequest="200" 
-            HeightRequest="200"
+        
+        <ContentView
+            Padding="0,20,0,0"
             Grid.Row="1"
             Grid.Column="0"
             HorizontalOptions="Center"
-            VerticalOptions="Center"/>
-        
-        <Label 
+            VerticalOptions="Center">
+                <Image 
+                x:Name="myImage" 
+                WidthRequest="200" 
+                HeightRequest="200"/>
+        </ContentView>
+
+        <ContentView
+            Padding="0,60,0,0"
             Grid.Row="2"
             Grid.Column="0"
-            Text="Save and View your Fitness progress"
-            FontSize="Medium"
             HorizontalOptions="Center"
-            VerticalOptions="Center" />
-
+            VerticalOptions="Center">
+                <Label 
+                Text="Save and View your Fitness progress"
+                FontSize="Medium" />
+        </ContentView>
+        
         <Button 
             Grid.Row="3"
             Grid.Column="0"

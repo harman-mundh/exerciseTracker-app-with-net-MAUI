@@ -27,6 +27,7 @@ Syncfusion: Used for creating the graphical interface in the BMI calculator, inc
 ---
 
 ### Reources used in the development of this application can be found in the following links
+- Other references in specific files 
 - Icons from: https://feathericons.com/
 - Gif animations from: https://www.inspireusafoundation.org/
 - Muscles anatomy from: https://www.muscleandstrength.com/exercises

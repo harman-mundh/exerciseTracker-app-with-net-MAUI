@@ -29,8 +29,8 @@ public static class MauiProgram
 		builder.Services.AddSingleton<CameraViewModel>();
 		builder.Services.AddSingleton<CameraPage>();
 
-		builder.Services.AddSingleton<DiaryViewModel>();
 		builder.Services.AddSingleton<DiaryPage>();
+		builder.Services.AddSingleton<DiaryListPage>();
 
 		builder.Services.AddSingleton<IConnectivity>(Connectivity.Current);
 

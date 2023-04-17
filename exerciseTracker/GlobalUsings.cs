@@ -2,7 +2,9 @@
 global using CommunityToolkit.Mvvm.ComponentModel;
 global using CommunityToolkit.Mvvm.Input;
 global using exerciseTracker.ViewModels;
+global using exerciseTracker.Model;
 global using exerciseTracker.Views;
+global using exerciseTracker.Services;
 global using System.Collections.ObjectModel;
 global using System.ComponentModel;
 global using System.Diagnostics;

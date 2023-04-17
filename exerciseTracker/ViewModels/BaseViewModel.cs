@@ -1,24 +1,12 @@
 ﻿namespace exerciseTracker.ViewModels;
 
-
-public abstract class BaseViewModel : INotifyPropertyChanged
+public partial class BaseViewModel : ObservableObject
 {
-    public event PropertyChangedEventHandler PropertyChanged;
+    [ObservableProperty]
+    [NotifyPropertyChangedFor(nameof(IsNotBusy))]
+    bool isBusy;
 
-    protected virtual void OnPropertyChanged([CallerMemberName] string propertyName = null)
-    {
-        PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
-    }
-
-    protected virtual bool SetProperty<T>(ref T backingField, T value, [CallerMemberName] string propertyName = null)
-    {
-        if (EqualityComparer<T>.Default.Equals(backingField, value))
-        {
-            return false;
-        }
-
-        backingField = value;
-        OnPropertyChanged(propertyName);
-        return true;
-    }
+    [ObservableProperty]
+    string title;
+    public bool IsNotBusy => !IsBusy;
 }

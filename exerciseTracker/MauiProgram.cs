@@ -1,6 +1,8 @@
-﻿using Camera.MAUI;
-
-namespace exerciseTracker;
+﻿namespace exerciseTracker;
+using exerciseTracker.Services;
+using exerciseTracker.ViewModels;
+using exerciseTracker.Views;
+using Syncfusion.Maui.Core.Hosting;
 
 public static class MauiProgram
 {
@@ -9,6 +11,7 @@ public static class MauiProgram
 		var builder = MauiApp.CreateBuilder();
 		builder
 			.UseMauiApp<App>()
+			.ConfigureSyncfusionCore()
 			.UseMauiCameraView()
 			.UseMauiCommunityToolkit()
 			.ConfigureFonts(fonts =>
@@ -16,21 +19,20 @@ public static class MauiProgram
 				fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");
 				fonts.AddFont("OpenSans-Semibold.ttf", "OpenSansSemibold");
 			});
-
-
+#if DEBUG
+		builder.Services.AddSingleton<ExerciseService>();
+		
         builder.Services.AddSingleton<MainViewModel>();
-
+#endif
 		builder.Services.AddSingleton<MainPage>();
 
 		builder.Services.AddSingleton<CameraViewModel>();
-
 		builder.Services.AddSingleton<CameraPage>();
 
 		builder.Services.AddSingleton<DiaryViewModel>();
-
 		builder.Services.AddSingleton<DiaryPage>();
 
-		builder.Services.AddSingleton<IMediaPicker>(MediaPicker.Default);
+		builder.Services.AddSingleton<IConnectivity>(Connectivity.Current);
 
 		return builder.Build();
 	}

@@ -7,21 +7,21 @@ public class DiaryItemDatabase
 {
     static SQLiteAsyncConnection Database;
 
-    public static readonly AsyncLazy<DiaryItemDatabase> Instance =
-        new AsyncLazy<DiaryItemDatabase>(async () =>
-        {
-            var instance = new DiaryItemDatabase();
-            try
+        public static readonly AsyncLazy<DiaryItemDatabase> Instance =
+            new AsyncLazy<DiaryItemDatabase>(async () =>
             {
-                CreateTableResult result = await Database.CreateTableAsync<DiaryItem>();
-            }
-            catch (Exception ex)
-            {
+                var instance = new DiaryItemDatabase();
+                try
+                {
+                    CreateTableResult result = await Database.CreateTableAsync<DiaryItem>();
+                }
+                catch (Exception)
+                {
 
-                throw;
-            }
-            return instance;
-        });
+                    throw;
+                }
+                return instance;
+            });
 
 
     public DiaryItemDatabase()
